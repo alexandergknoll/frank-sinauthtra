@@ -1,8 +1,9 @@
+<form class="navbar-form navbar-right" action="/logout" method="post">
+	<button type="submit" class="btn btn-success">Sign out</button>
+</form>
+
 <ul class="nav navbar-nav navbar-right">
-	<li><span class="navbar-text">Welcome, <%= @current_user.first_name %></span></li>
-	<li class="active"><a href="#">Home</a></li>
-	<li><a href="#">Profile</a></li>
-	<form class="navbar-form navbar-right" action="/logout" method="post">
-		<button type="submit" class="btn btn-success">Sign out</button>
-	</form>
+  <li><a class="navbar-link">Welcome, <%= @current_user.first_name %></a></li>
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Profile</a></li>
 </ul>
