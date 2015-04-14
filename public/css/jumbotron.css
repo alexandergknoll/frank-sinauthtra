@@ -3,3 +3,11 @@ body {
   padding-top: 50px;
   padding-bottom: 20px;
 }
+
+#welcome {
+  margin-right: 0;
+}
+
+#user {
+  padding-left: 6px;
+}

@@ -1,7 +1,7 @@
-<ul class="nav navbar-nav pull-right">
+<ul class="nav navbar-nav navbar-right">
+	<li><span class="navbar-text">Welcome, <%= @current_user.first_name %></span></li>
 	<li class="active"><a href="#">Home</a></li>
-	<li><a href="#about">About</a></li>
-	<li><a href="#contact">Profile</a></li>
+	<li><a href="#">Profile</a></li>
 	<form class="navbar-form navbar-right" action="/logout" method="post">
 		<button type="submit" class="btn btn-success">Sign out</button>
 	</form>
