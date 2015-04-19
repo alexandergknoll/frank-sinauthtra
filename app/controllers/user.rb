@@ -1,10 +1,33 @@
-post '/login' do
-  current_user = User.authenticate(params[:credentials])
-  session[:current_user] = current_user.id if current_user
+get '/users/new' do
+  if current_user
+    redirect '/'
+  else
+    erb :'users/new'
+  end
+end
+
+post '/users/new' do
+  if current_user
+    redirect '/'
+  else
+    user = User.new(params[:user])
+    if user.save
+      session[:user_id] = user.id
+      redirect "/"
+    else
+      @errors = user.errors.full_messages
+      erb :'users/new'
+    end
+  end
+end
+
+post '/users/login' do
+  user = User.authenticate(params[:credentials])
+  session[:user_id] = user.id if user
   redirect "/"
 end
 
-post '/logout' do
-  session[:current_user] = nil
+post '/users/logout' do
+  user_logout
   redirect "/"
 end

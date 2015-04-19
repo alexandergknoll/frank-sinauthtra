@@ -1,7 +1,16 @@
 class User < ActiveRecord::Base
-  validates_presence_of :first_name, :last_name, :email, :password
-  validates_format_of :email, :with => /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/,
-    :message => "Invalid email address"
+  validates :first_name,
+            presence: { message: "can't be blank" }
+  validates :last_name,
+            presence: { message: "can't be blank" }
+  validates :email,
+            presence: { message: "can't be blank" },
+            uniqueness: { message: "already registered!"},
+            format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/, message: "Email not valid" }
+  validates :password,
+            presence: { message: "can't be blank" },
+            length: { minimum: 8, message: "must be at least 8 characters" },
+            confirmation: true
 
   def password
     @password = BCrypt::Password.new(password_digest)
