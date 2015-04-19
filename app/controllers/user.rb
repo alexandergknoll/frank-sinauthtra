@@ -22,9 +22,18 @@ post '/users/new' do
 end
 
 post '/users/login' do
-  user = User.authenticate(params[:credentials])
-  session[:user_id] = user.id if user
-  redirect "/"
+  if current_user
+    redirect '/'
+  else
+    user = User.authenticate(params[:credentials])
+    if user
+      session[:user_id] = user.id
+      redirect "/"
+    else
+      @errors = ["Invalid email/password"]
+      erb :index
+    end
+  end
 end
 
 post '/users/logout' do

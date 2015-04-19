@@ -34,13 +34,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Sinatra Skeleton</a>
+          <a class="navbar-brand" href="/">Sinatra Skeleton</a>
         </div>
         <nav id="navbar" class="navbar-collapse collapse">
           <% if current_user %>
-            <%= erb :"_usernav" %>
+            <%= erb :"nav/_logged-in" %>
           <% else %>
-            <%= erb :"_login" %>
+            <%= erb :"nav/_logged-out" %>
           <% end %>
         </nav><!--/.navbar-collapse -->
       </div>
