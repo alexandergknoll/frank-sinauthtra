@@ -1,2 +1,3 @@
 # sinatra-seleton
-A skeleton for use with new Sinatra web apps.  Includes BCrypt secure authentication
+
+This is a skeleton built on Sinatra for use as a starting point for Sinatra web apps.  It includes BCrypt for secure multi-user authentication as well as Twitter Bootstrap.
