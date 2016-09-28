@@ -8,76 +8,56 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Product Name</title>
+    <title>Sinatra Web App Template</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/css/jumbotron.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Use styles compiled by Compass -->
+    <link href="/css/styles.css" rel="stylesheet">
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Product Name</a>
-        </div>
-        <nav id="navbar" class="navbar-collapse collapse">
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+        <a class="navbar-brand" href="/">Sinatra Web App</a>
+        <ul class="nav navbar-nav">
           <% if current_user %>
             <%= erb :"nav/_logged-in" %>
           <% else %>
             <%= erb :"nav/_logged-out" %>
           <% end %>
-        </nav><!--/.navbar-collapse -->
+        </ul>
       </div>
     </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="container">
+      <div class="jumbotron">
+        <% if @errors %>
+          <div class="errors">
+            <% @errors.each do |error| %>
+              <p><%= error %></p>
+            <% end %>
+          </div>
+        <% end %>
 
-      <div class="container">
-      <% if @errors %>
-        <div class="errors">
-          <% @errors.each do |error| %>
-            <p><%= error %></p>
-          <% end %>
-        </div>
-      <% end %>
-      </div>
-      <div class="container">
         <%= yield %>
       </div>
     </div>
 
-
     <div class="container">
       <hr>
       <footer>
-        <p>Designed by Alex Knoll in 2015</p>
+        <p>Designed by Alex Knoll in 2016</p>
       </footer>
     </div> <!-- /container -->
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
   </body>
 </html>

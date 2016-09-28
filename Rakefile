@@ -1,4 +1,7 @@
+require 'rubygems'
+require 'bundler'
 require 'rake'
+
 begin
   require "rspec/core/rake_task"
   desc "Run all examples"
@@ -128,6 +131,32 @@ namespace :db do
   desc "Returns the current schema version number"
   task :version do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
+  end
+end
+
+namespace :css do
+  desc "Clear the CSS"
+  task :clear => ["compile:clear"]
+
+  desc "Compile the CSS"
+  task :compile => ["compile:default"]
+
+  namespace :compile do
+    task :clear do
+      puts "Clearing the CSS..."
+      system "rm -Rfv public/stylesheets/*"
+    end
+
+    task :default => :clear do
+      puts "Compiling the CSS..."
+      system "compass compile"
+    end
+
+    desc "Compile CSS for production"
+    task :prod => :clear do
+      puts "Compiling the CSS for production..."
+      system "compass compile --output-style compressed --force"
+    end
   end
 end
 

@@ -7,6 +7,10 @@ gem 'bcrypt'
 # PostgreSQL driver
 gem 'pg'
 
+# Bootstrap SASS and Compass for frontend
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem "compass"
+
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
