@@ -4,6 +4,8 @@
 
 This is a skeleton built on Sinatra for use as a starting point to build a basic Sinatra web app.  It includes BCrypt for secure multi-user authentication as well as Twitter Bootstrap.
 
+Note: this app may not be secure to run in a production environment and is to be used for learning and testing purposes only.
+
 ## Getting Started
 
 Fetch gems using bundler:
@@ -12,6 +14,8 @@ Create database:
 `rake db:create`
 Run migrations:
 `rake db:migrate`
+Build styles:
+`rake css:compile`
 Start Shotgun server:
 `shotgun config.ru`
 
