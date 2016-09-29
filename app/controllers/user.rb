@@ -21,6 +21,14 @@ post '/users/new' do
   end
 end
 
+get '/users/login' do
+  if current_user
+    redirect '/'
+  else
+    erb :'users/login'
+  end
+end
+
 post '/users/login' do
   if current_user
     redirect '/'
@@ -31,7 +39,7 @@ post '/users/login' do
       redirect "/"
     else
       @errors = ["Invalid email/password"]
-      erb :index
+      erb :'users/login'
     end
   end
 end
