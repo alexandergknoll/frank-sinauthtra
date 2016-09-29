@@ -7253,3 +7253,10 @@ a.text-danger:focus, a.text-danger:hover {
     display: none !important;
   }
 }
+
+@media (max-width: 543px) {
+  /* line 13, ../../sass/styles.scss */
+  #navbar {
+    clear: both;
+  }
+}

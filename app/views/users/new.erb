@@ -1,28 +1,28 @@
 <h1>Register</h1>
 <p>Please tell us a bit about yourself:</p>
 
-<form id="register" action="/users/new" method="post">
-  <table>
-    <tr>
-      <td><label for="user[first_name]">First Name:</label></td>
-      <td><input class="form-control" name="user[first_name]" type="text"></td>
-    </tr>
-    <tr>
-      <td><label for="user[last_name]">Last Name:</label></td>
-      <td><input class="form-control" name="user[last_name]" type="text"></td>
-    </tr>
-    <tr>
-      <td><label for="user[email]">Email:</label></td>
-      <td><input class="form-control" name="user[email]" type="email"></td>
-    </tr>
-    <tr>
-      <td><label for="user[password]">Password:</label></td>
-      <td><input class="form-control" name="user[password]" type="password"></td>
-    </tr>
-    <tr>
-      <td><label for="user[password_confirmation]">Confirm Password:</label></td>
-      <td><input class="form-control" name="user[password_confirmation]" type="password"></td>
-    </tr>
-  </table>
-  <input type="submit" class="btn btn-primary" value="Sign Up!">
+<form id="register" action="/users/new" method="post" style="max-width:280px;">
+  <div class="form-group">
+    <label for="first-name">First Name:</label>
+    <input id="first-name" class="form-control" name="user[first_name]" type="text">
+  </div>
+  <div class="form-group">
+    <label for="last-name">Last Name:</label>
+    <input id="last-name" class="form-control" name="user[last_name]" type="text">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input id="email" class="form-control" name="user[email]" type="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input id="password" class="form-control" name="user[password]" type="password">
+  </div>
+  <div class="form-group">
+    <label for="password-confirmation">Confirm Password:</label>
+    <input id="password-confirmation" class="form-control" name="user[password_confirmation]" type="password">
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary" value="Register">
+  </div>
 </form>

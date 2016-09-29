@@ -8,3 +8,9 @@
 // @import "bootstrap-grid";
 // or Import Bootstrap Reboot
 // @import "bootstrap-reboot";
+
+@media (max-width: 543px) {
+  #navbar {
+    clear: both;
+  }
+}
