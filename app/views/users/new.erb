@@ -4,15 +4,15 @@
 <form id="register" action="/users" method="post" style="max-width:280px;">
   <div class="form-group">
     <label for="first-name">First Name:</label>
-    <input id="first-name" class="form-control" name="user[first_name]" type="text">
+    <input id="first-name" class="form-control" name="user[first_name]" type="text" value="<%= @user.first_name %>">
   </div>
   <div class="form-group">
     <label for="last-name">Last Name:</label>
-    <input id="last-name" class="form-control" name="user[last_name]" type="text">
+    <input id="last-name" class="form-control" name="user[last_name]" type="text" value="<%= @user.last_name %>">
   </div>
   <div class="form-group">
     <label for="email">Email:</label>
-    <input id="email" class="form-control" name="user[email]" type="email">
+    <input id="email" class="form-control" name="user[email]" type="email" value="<%= @user.email %>">
   </div>
   <div class="form-group">
     <label for="password">Password:</label>
