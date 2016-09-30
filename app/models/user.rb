@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :email,
             presence: { message: "can't be blank" },
             uniqueness: { message: "already registered!"},
-            format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/, message: "Email not valid" }
+            format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/, message: "not valid" }
   validates :password,
             presence: { message: "can't be blank" },
             length: { minimum: 8, message: "must be at least 8 characters" },
