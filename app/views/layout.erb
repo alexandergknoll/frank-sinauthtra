@@ -25,13 +25,13 @@
               <div class="pull-xs-left pull-sm-right">
                 <% if current_user %>
                   <li class="nav-item">
-                    <form action="/users/logout" method="post">
+                    <form action="/sessions/delete" method="post">
                       <button type="submit" class="btn btn-primary">Sign out</button>
                     </form>
                   </li>
                 <% else %>
                   <li class="nav-item">
-                    <a class="nav-link" href="/users/login">Log in</a>
+                    <a class="nav-link" href="/sessions/new">Log in</a>
                   </i>
                   <li class="nav-item">
                     <a class="nav-link" href="/users/new">Register</a>

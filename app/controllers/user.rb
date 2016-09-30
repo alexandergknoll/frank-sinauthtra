@@ -6,7 +6,7 @@ get '/users/new' do
   end
 end
 
-post '/users/new' do
+post '/users' do
   if current_user
     redirect '/'
   else
@@ -19,32 +19,4 @@ post '/users/new' do
       erb :'users/new'
     end
   end
-end
-
-get '/users/login' do
-  if current_user
-    redirect '/'
-  else
-    erb :'users/login'
-  end
-end
-
-post '/users/login' do
-  if current_user
-    redirect '/'
-  else
-    user = User.authenticate(params[:credentials])
-    if user
-      session[:user_id] = user.id
-      redirect "/"
-    else
-      @errors = ["Invalid email/password"]
-      erb :'users/login'
-    end
-  end
-end
-
-post '/users/logout' do
-  user_logout
-  redirect "/"
 end
