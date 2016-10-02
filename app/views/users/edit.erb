@@ -1,0 +1,6 @@
+<h1>Profile</h1>
+<p>Update your profile information below</p>
+
+<form id="register" action="/users/<%= current_user.id %>/update" method="post" style="max-width:280px;">
+  <%= erb :'users/_form' %>
+</form>

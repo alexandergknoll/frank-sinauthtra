@@ -25,6 +25,9 @@
               <div class="pull-xs-left pull-sm-right">
                 <% if current_user %>
                   <li class="nav-item">
+                    <a href="/users/<%= current_user.id %>/edit" class="nav-link">Profile</a>
+                  </li>
+                  <li class="nav-item">
                     <form action="/sessions/delete" method="post">
                       <button type="submit" class="btn btn-primary">Sign out</button>
                     </form>
