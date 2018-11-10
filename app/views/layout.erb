@@ -7,69 +7,44 @@
     <meta name="description" content="A Sinatra Web App starter skeleton by Alex Knoll">
     <meta name="author" content="Alex Knoll">
     <title>Sinatra Web App Skeleton</title>
-
-    <!-- Use styles compiled by Compass -->
-    <link href="/css/styles.css" rel="stylesheet">
   </head>
 
   <body>
     <div class="container">
       <header>
-        <nav class="navbar navbar-dark bg-inverse" style="margin: 1rem 0;">
-          <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            &#9776;
-          </button>
-          <a class="navbar-brand" href="/">Sinatra Web App</a>
-          <div class="collapse navbar-toggleable-xs" id="navbar">
-            <ul class="nav navbar-nav">
-              <div class="pull-xs-left pull-sm-right">
-                <% if current_user %>
-                  <li class="nav-item">
-                    <a href="/users/<%= current_user.id %>/edit" class="nav-link">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <form action="/sessions/delete" method="post">
-                      <button type="submit" class="btn btn-primary">Sign out</button>
-                    </form>
-                  </li>
-                <% else %>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/sessions/new">Log in</a>
-                  </i>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/users/new">Register</a>
-                  </li>
-                <% end %>
-              </div>
-            </ul>
-          </div>
+        <nav id="menu">
+          <ul class="nav">
+            <% if current_user %>
+              <li class="nav-item">
+                <a href="/users/<%= current_user.id %>/edit" class="nav-link">Profile</a>
+              </li>
+              <li class="nav-item">
+                <form action="/sessions/delete" method="post">
+                  <button type="submit" class="btn btn-primary">Sign out</button>
+                </form>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <a class="nav-link" href="/sessions/new">Log in</a>
+              </i>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/new">Register</a>
+              </li>
+            <% end %>
+          </ul>
         </nav>
       </header>
 
       <% if @errors %>
-        <div class="errors">
+        <ul id="errors">
           <% @errors.each do |error| %>
-            <div class="alert alert-danger" role="alert">
-              <%= error %>
-            </div>
+            <li><%= error %></li>
           <% end %>
-        </div>
+        </ul>
       <% end %>
 
-      <div class="jumbotron">
-        <%= yield %>
-      </div>
+      <%= yield %>
 
-      <hr>
-
-      <footer>
-        <p>Designed by Alex Knoll in 2016</p>
-      </footer>
-    </div> <!-- /container -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+    </div>
   </body>
 </html>

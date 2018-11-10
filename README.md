@@ -8,16 +8,10 @@ Note: this app may not be secure to run in a production environment and is to be
 
 ## Getting Started
 
-Fetch gems using bundler:
-`bundle install`
-Create database:
-`rake db:create`
-Run migrations:
-`rake db:migrate`
-Build styles:
-`rake css:compile`
-Start Shotgun server:
-`shotgun config.ru`
+1. Fetch gems using bundler: `bundle install`
+2. Create database: `rake db:create`
+3. Run migrations: `rake db:migrate`
+4. Start Shotgun server: `shotgun config.ru`
 
 Using a web browser, navigate to http://localhost:9393
 
