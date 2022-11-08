@@ -8,14 +8,14 @@ gem 'bcrypt'
 gem 'pg', '~>0.15'
 
 # Sinatra driver
-gem 'sinatra'
-gem 'sinatra-contrib'
+gem 'sinatra', ">= 2.0.4"
+gem 'sinatra-contrib', ">= 2.0.4"
 
 # Use Thin for our web server
 gem 'thin'
 
-gem 'activesupport', '~>4.1'
-gem 'activerecord', '~>4.1'
+gem "activesupport", ">= 5.2.8.1"
+gem "activerecord", ">= 5.2.8.1"
 
 gem 'rake'
 
