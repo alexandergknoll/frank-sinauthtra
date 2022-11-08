@@ -29,7 +29,7 @@ GEM
     multi_json (1.13.1)
     mustermann (1.0.3)
     pg (0.21.0)
-    rack (2.0.6)
+    rack (2.2.4)
     rack-protection (2.0.4)
       rack
     rake (12.3.1)
