@@ -1,4 +1,4 @@
-# Sinatra user authentication skeleton
+# Frank Sinauthtra
 
 ## Description
 
