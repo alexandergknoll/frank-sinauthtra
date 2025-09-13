@@ -17,9 +17,9 @@ This was built as a learning exercise to help understand the basics of user auth
 1. Fetch gems using bundler: `bundle install`
 2. Create database: `bundle exec rake db:create`
 3. Run migrations: `bundle exec rake db:migrate`
-4. Start Shotgun server: `bundle exec shotgun config.ru`
+4. Start Rackup server: `bundle exec rackup`
 
-Using a web browser, navigate to [http://localhost:9393](http://localhost:9393)
+Using a web browser, navigate to [http://localhost:9292](http://localhost:9292)
 
 ## Contributing
 

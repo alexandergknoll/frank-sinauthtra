@@ -1,27 +1,26 @@
-ruby '2.4.0'
+ruby '3.4.5'
 source 'https://rubygems.org'
 
 # BCrypt
 gem 'bcrypt'
 
 # PostgreSQL driver
-gem 'pg', '~>0.15'
+gem 'pg', '~> 1.5'
 
 # Sinatra driver
-gem 'sinatra', ">= 2.0.4"
-gem 'sinatra-contrib', ">= 2.0.4"
+gem 'sinatra', '~> 4.1'
+gem 'sinatra-contrib', '~> 4.1'
 
-# Use Thin for our web server
-gem 'thin'
+# Use Puma for our web server (Thin is incompatible with Sinatra 4.x)
+gem 'puma', '~> 6.5'
 
-gem "activesupport", ">= 5.2.8.1"
-gem "activerecord", ">= 5.2.8.1"
+gem 'activesupport', '~> 7.2'
+gem 'activerecord', '~> 7.2'
 
-gem 'rake'
-
-gem 'shotgun'
+gem 'rake', '~> 13.2'
+gem 'rackup', '~> 2.2'
 
 group :test do
-  gem 'faker'
-  gem 'rspec'
+  gem 'faker', '~> 3.5'
+  gem 'rspec', '~> 3.13'
 end
